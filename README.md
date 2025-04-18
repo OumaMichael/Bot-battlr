@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# React Immersive Code Challenge: Bot Battlr  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to **Bot Battlr**, the ultimate React challenge where you get to build and manage your own custom Bot Army! Command your bots, discharge them, or send them to battle — all through a sleek, dynamic interface.
 
-## Available Scripts
+![Bot Battlr Demo](https://curriculum-content.s3.amazonaws.com/phase-2/phase-2-hooks-code-challenge-bot-battlr/checkpoint_demo.gif)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+##  Setup Instructions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Run `npm install` to install dependencies.
+2. Start the backend server with `npm run server` (runs on port `8002`).
+3. Open a new terminal tab and run `npm start` to launch the frontend React app (runs on port `8000`).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+👉 Verify the backend is running by visiting: [http://localhost:8002/bots](http://localhost:8002/bots)
 
-### `npm test`
+**Base API URL:** `http://localhost:8002`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+##  React Components Overview
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **`App`**: Root component wrapping the entire application.
+- **`BotPage`**: Main layout below `App`, containing all key components.
+- **`BotCollection`**: Displays the complete list of available bots.
+- **`ArmyRoster` (YourBotArmy)**: Shows bots selected by the user.
+- **`BotCard`**: Reusable card component for bot previews.
+- **`BotDetail`**: Displays detailed information about a selected bot.
+- **`SortControls` / `ClassFilter` / `FilterBar`**: Provide filtering and sorting functionality.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##  Core Features & Deliverables
 
-### `npm run eject`
+As a user, you can:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+-  View **all bot profiles** in the collection.
+-  **Add a bot** to your army by clicking on it (only once).
+-  View your **bot army** at the top of the screen.
+-  **Release a bot** from your army by clicking on it.
+-  **Discharge a bot forever** using the red “X” — removes it from both frontend and backend.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+##  Backend API Routes
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### `GET /bots`
 
-## Learn More
+Returns all bots:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```json
+[
+    {
+        "id": 101,
+        "name": "wHz-93",
+        "health": 94,
+        "damage": 20,
+        "armor": 63,
+        "bot_class": "Support",
+        "catchphrase": "1010010101001101100011000111101",
+        "avatar_url": "https://robohash.org/nostrumrepellendustenetur.png?size=300x300&set=set1"
+    },
+    ...
+]
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `DELETE /bots/:id`
 
-### Code Splitting
+Deletes a specific bot:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```json
+{}
+```
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Technologies Used
 
-### Making a Progressive Web App
+- React
+- React Hooks (`useState`, `useEffect`)
+- JSON Server
+- JavaScript (ES6+)
+- HTML & CSS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+##  Challenges Faced
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Managing state across multiple components (e.g., army vs. collection).
+- Implementing full CRUD operations (GET, POST, DELETE).
+- Handling conditional rendering and event bubbling.
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🏁 Final Thoughts
 
-### `npm run build` fails to minify
+This project was a great way to practice full CRUD in React with a JSON server backend. It demonstrates effective state management, component reusability, and interactive UI design.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Made with 💙 by Michael Ouma
