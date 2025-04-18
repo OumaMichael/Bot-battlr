@@ -1,0 +1,43 @@
+/* 1) Semantic UI core */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css');
+
+/* 2) Global reset & typography */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+/* 3) Utility for wrapping text */
+.text-wrap {
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* 4) Army horizontal scroll container */
+.bot-army {
+  overflow-x: auto;
+  min-height: 300px;
+  max-width: 100%;
+}
+
+/* 5) Prevent Semantic grid from wrapping your army row */
+.ui.grid > .row.bot-army-row {
+  flex-wrap: nowrap !important;
+  min-height: 100%;
+}
+
+/* 6) Give a little padding around all your grids */
+.ui.grid {
+  padding: 0 20px;
+}
+
+/* 7) Simple horizontal filter bar */
+.filter {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 1rem 0;
+}
